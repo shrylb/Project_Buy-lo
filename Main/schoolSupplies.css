@@ -1,0 +1,99 @@
+  
+  .feed-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .feed-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .feed-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .feed-item h3 {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* CSS for writingMaterials.html */
+  /* Add specific styles for writingMaterials.html here */
+  .writingMaterials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .writingMaterials-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .writingMaterials-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .writingMaterials-item h3 {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* CSS for paperMaterials.html */
+  /* Add specific styles for paperMaterials.html here */
+  .paperMaterials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .paperMaterials-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .paperMaterials-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .paperMaterials-item h3 {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  /* CSS for schoolSupplies.html */
+  /* Add specific styles for schoolSupplies.html here */
+  .schoolSupplies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .schoolSupplies-item {
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .schoolSupplies-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .schoolSupplies-item h3 {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  

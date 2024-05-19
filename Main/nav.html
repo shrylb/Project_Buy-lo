@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/nav.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="items-container-bg">
+            <div id="items-container">
+                <img class="logo" src="http://localhost:3000/Images/baner.png.png">
+                <div class="search-area">
+                            <input type="text" placeholder="Search in Buy-lo" id="search-input">
+                            <button id="searchbtn" class="toprightbtn">
+                                <i class="material-symbols-outlined">search</i>
+                            </button>
+                        </div>
+                <div class="topright">
+                    <button class="toprightbtn">
+                        <span class="material-symbols-outlined">favorite</span>
+                        <p class="button-label">Wishlist</p>
+                    </button>
+                   
+                </div>
+                <div class="topright">
+                    <button class="toprightbtn" src="notif.png">
+                        <i class="material-symbols-outlined">notifications</i>
+                        <p class="button-label">Notifications</p>
+                    </button>
+                </div>
+                <div class="topright">
+                    <button onclick="location.href='AccountPage.html'" class="toprightbtn">
+                        <i class="material-symbols-outlined">person</i>
+                        <p class="button-label">Account</p>
+                    </button>
+    
+                </div>
+                <div class="topright">
+                    <button onclick="window.location.href='/homepage.html'" class="toprightbtn">
+                        <i class="material-symbols-outlined">home</i>
+                        <p class="button-label">Home</p>
+                    </button>
+    
+                </div>
+            </div>
+        </div>
+       
+
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <button class="dropbtn">School Supplies</button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Foods</button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Clothes</button>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Gadgets</button>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Merchandise</button>
+            </div>
+        </div>
+    </nav>
+    <!-- <script src="JS/nav.js"></script> -->
+
+</body>
+
+</html>

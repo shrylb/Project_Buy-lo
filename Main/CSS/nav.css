@@ -1,0 +1,335 @@
+/*
+table of contents
+1. global styles
+2. navigation 
+3. icons
+4. search
+5. icons dropdowns
+6. categories
+7. logo
+
+yellow color: #ba8b53
+green color: #365544
+*/
+
+/* 1. global styles */
+
+:root {
+    --fs-body: 1.125rem;
+    --color-main: #365544;
+    --color-action:rgb(132, 132, 132);
+    --color-accent: rgb(255, 255, 255);
+    --navbar-text-color: black;
+    /* --color-accent: rgb(255, 198, 26); */
+    --transition: 200ms ease;
+    --transition-animation: cubic-bezier(.43, .8, .35, 1.28);
+  }
+  
+
+html {
+    font-family: Candara, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+}
+/* 2. navigation */
+.navbar {
+    align-items: center;
+    position: sticky;
+    left: 0;
+    width: 100%;
+    height: min-content;
+    top: 0;
+    z-index: 2;
+    /* overflow:hidden; */
+}
+
+
+.website-title {
+    font-family: "Patua One", sans-serif;
+    text-transform:uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: ghostwhite;
+    margin: auto;
+    font-size: 3rem;
+    transition: all var(--transition);
+}
+
+/* .website-title:hover {
+    color: var(--color-main-light);
+} */
+
+/* 
+/* 3. icons */
+
+.items-container-bg{
+
+    background-color:white; /* Set the background color */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .15);
+    width: 100%;
+}
+#items-container {
+    display: grid;
+    grid-template-columns: minmax(20px, auto) minmax(20px, auto) repeat(4, auto);
+    margin: 0 auto;
+    width: 90%;
+    gap: 1rem;
+    z-index: 1;
+}
+
+
+.material-symbols-outlined {
+    color: var(--navbar-text-color);
+    font-size: clamp(1rem, 2vw, 2rem);
+    transition: all var(--transition);
+}
+.button-label{
+    font-size: clamp(1rem, 1vw + 0.1rem, 2rem);
+    padding-left: 0.3rem;
+    color: var(--navbar-text-color);
+    transition: all var(--transition);
+}
+.topright {
+    width: 100%;
+    position: relative;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    padding-inline: 0.4rem;
+}
+
+
+.topright:hover{
+    background-color: var(--color-main);
+}
+.topright:hover .button-label{
+    color: white;
+}
+.topright:hover .material-symbols-outlined{
+    color: white;
+
+}
+
+/* 4. search */
+.search-area {
+    --size: 60px;
+    text-align: left;
+    margin: auto;
+    display: flex;
+    border-radius: 100px;
+    overflow: hidden;
+    width: 90%; /* Increase the width by 1rem */
+    height: 2rem;
+    padding: 3px;
+    position: relative;
+    transition: all 450ms cubic-bezier(0.18, 0.89, 0.32, 1);
+    border: 1px solid black
+}
+
+/* search to be edited */
+#search-input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    z-index: 2;
+    padding: 0.9em;
+    display: flex;
+    flex-grow: 1;
+    opacity: 1;
+
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;  
+}
+
+#searchbtn {
+    --size: 60px;
+    transition: all var(--transition);
+    border-radius: 100vh;
+    width: calc(var(--size) + 1rem);
+    /* 
+    font-size: 1.5rem;
+    margin-left: auto;
+    background: 0;
+    z-index: 1;
+    border: 0;
+    cursor: pointer;
+    height: 2rem;
+    color: black; 
+    */
+}
+
+
+.search-area:hover #searchbtn {
+    color: var(--color-main-light);
+}
+
+#searchbtn:active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar:has(.search-area:focus-within) .website-title {
+    display: none;
+}
+
+.search-area:focus-within #searchbtn {
+    background: var(--color-main);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+}
+
+.search-area:focus-within .material-symbols-outlined{
+    color: white;
+}
+
+.search-area:focus-within .search-area:hover,
+.search-area:focus-within .search-area:focus {
+    outline: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .65);
+}
+
+#search-input:has(button) {
+    display: inline-block;
+}
+
+
+
+.toprightbtn {
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    height: 100%;
+    width: 100%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    color: #011b0d;
+}
+
+.topright:has(.topright-dropdown){
+    position: relative;
+    display: inline-block;
+    
+}
+
+.topright:has(.topright-dropdown):hover .topright-dropdown{
+    display: block;
+}
+
+.topright-dropdown{
+    display: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .65);
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+/* 5. icons dropdowns */
+
+
+
+
+
+/* 6. categories */
+
+
+
+.dropdown-container::before {
+    content: "";
+    display: none;
+    height: 2px;
+    margin: auto;
+    width: 100%;
+    background-color: var(--color-accent);
+    z-index: 1;
+    position: sticky;
+}
+
+.dropdown-container {
+    display: fixed;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: var(--color-main);
+    transform-origin: top;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: calc(9rem - 0.4rem); 
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown:hover {
+    color: var(--color-accent);
+    transition: all var(--transition);
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: clamp(0.8rem, 1vw, 3rem);
+    transition: all var(--transition);
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 2rem;
+}
+
+.dropbtn:hover{
+    background-color: var(--color-action);
+}
+
+
+
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 100%;
+    }
+}
+
+
+/* 7. logo */
+
+.logo {
+    width: 50%;
+
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+

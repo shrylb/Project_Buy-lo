@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+	<link rel="stylesheet" href="CSS/search.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+	<script defer type="module" src="JS/nav.js"></script>
+	<script>
+		
+	</script>
+	<script defer type="module">
+		import { Model } from "./JS/model.js";
+		import { PageRenderer } from "./JS/pageRenderer.js";
+		
+		window.onload = async function(){
+			const model =  new Model();
+			const renderer = new PageRenderer();
+
+			const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('search');
+			document.title = 'Page For ' + query;	
+	
+			const div = document.querySelector(".cards-container");
+			const product = await model.search(query);
+			renderer.renderCards(div, product);
+		}
+
+	</script>
+
+</head>
+
+<body>
+	<nav class="navbar"></nav><br>
+	<div class="cards-container">
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<script src="JS/check.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/nav.css">
+  <link rel="stylesheet" href="CSS/account.css">
+  <script defer type="module" src="JS/nav.js"></script>
+  <title>Account Page</title>
+  <script defer src="JS/accountPage.js" type="module"></script>
+  <script defer type="module">
+    import {Authenticator} from "./JS/authenticator.js";
+    import {Model} from "./JS/model.js";
+    import {PageRenderer} from "./JS/pageRenderer.js";
+    import { getFirestore, collection, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import {db} from "./JS/connect.js";
+
+
+    const authenticator = new Authenticator();
+    const model = new Model();
+    const renderer = new PageRenderer();
+
+    const id = authenticator.getSignedInUserId();
+    const account = await model.getAccountById(id);
+    const photoUrl = authenticator.getUserPhoto();
+    renderer.addAccountDetails(account, photoUrl);
+
+    const docRef = doc(db, 'Accounts', id);
+    const docSnapshot = await getDoc(docRef);
+    
+
+      if (docSnapshot.exists()) {
+        // Access the array field within the document
+        const dataArray = await docSnapshot.data().products;
+        const products =[];
+        const div = document.getElementById("products");
+
+        // Iterate over the elements of the array using a loop
+        for (const id of dataArray) {
+
+        
+        const product = await model.getProductById(id);
+        products.push(product); 
+        console.log(id);
+
+         
+      }
+      renderer.renderInfo(div, products, model,id, "Products:");
+     }else {
+        console.log('Document does not exist.');
+      }
+
+      if (docSnapshot.exists()) {
+        // Access the array field within the document
+        const dataArray = await docSnapshot.data().transactions;
+        const products =[];
+        const div = document.getElementById("transactions");
+
+        // Iterate over the elements of the array using a loop
+        for (const id of dataArray) {
+
+        console.log(id);
+        const product = await model.getTransactionById(id);
+        products.push(product); 
+        
+         
+      }
+      renderer.renderInfo(div, products, model,id, "Transactions:");
+     }else {
+        console.log('Document does not exist.');
+      }
+  
+    const signoutButton = document.querySelector(".signout-button");
+    signoutButton.addEventListener("click", () => {
+      authenticator.signOut();
+      window.location.href = "/login.html";  
+    });
+
+  </script>
+</head>
+
+<body>
+  <nav class="navbar"></nav>
+
+  <container id="cont">
+    <!-- <img src="place.jpg" id="account_img"> -->
+  
+    <table id="AccountDetails">
+      <td class="details-container">
+        <center><p id="account_labels">Personal Information</p></center>
+        <!-- <img id="account_img">
+        <p id="account_txt">Name:</p>
+        <input type="text" id="name" readonly>
+        <p id="account_txt">Email:</p>
+        <p id="email"></p> -->
+        <div class="button-container">
+          <a href="ProductUpload.php" class="no-underline">
+            <button id="upload">Product Upload</button>
+          </a>
+          <button class="signout-button">Sign Out</button>
+        </div>
+      </td>
+    </table>
+  </container>
+  
+<!-- 
+  <br><br>
+  <a href="ProductUpload.php" class="no-underline">
+    <button id="upload">Product Upload</button>
+  </a>
+  <button class="signout-button">Sign Out</button> -->
+
+  <div id="products"></div>
+  <div id="transactions"></div>
+  <div id="footer"></div>
+  
+
+  
+
+  
+</body>
+
+</html>

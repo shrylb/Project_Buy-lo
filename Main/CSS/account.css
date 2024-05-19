@@ -1,0 +1,285 @@
+@import url("nav.css");
+
+.navbar {
+  align-items: center;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  top: 0;
+}
+
+body {
+  Font-family: candara, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+img[src="search.png"] {
+  margin-left: -10px;
+  margin-top: -2px;
+  height: 40px;
+  padding: 0px;
+  z-index: 2;
+  border-radius: 0px 15px 15px 0px;
+
+}
+
+#header {
+  padding-left: 5%;
+
+  background-position: center;
+  padding-top: 10%;
+  background: url("header.png") no-repeat;
+  background-size: contain;
+  background-color: #1e3932;
+
+
+}
+
+#account_labels{  /*for the labels in the account page */
+  text-align: center;
+  font-weight: bolder;
+  color:#1e3932;
+}
+
+#account_txt{ /*for the non label ttexts in account page*/
+  color: darkolivegreen;
+}
+.container{
+  text-align:center;
+}
+
+.button-container{
+  display: flex;  
+  justify-content: center;
+  margin: top 10px;
+}
+
+
+/* Upload button */
+#upload {
+  background-color: #e4ebe4;
+  /* fill:#3e8e41; */
+  border: 2px solid #3e8e41;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: darkolivegreen;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  padding: 8px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 30px;
+  margin-left: 680px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed; move position */
+  /* bottom: 10 px;
+  right: 200px; */
+  
+  
+}
+
+#upload:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+#upload::before {
+  content: "\f093"; /* Upload icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+a {
+  text-decoration: none;
+}
+
+
+img[src="place.jpg"] {
+
+  border-radius: 157px;
+  height: 150px;
+  WIDTH: 150px;
+  margin-left: 25%;
+  margin-top: 105px;
+}
+
+#cont{
+  margin-top: 20px;
+}
+#AccountDetails {
+  margin: 0 auto;
+  border: 2px solid rgba(247, 244, 244, 0.637);
+  background-color: #ffffff;
+  width: 30%;
+  height: 70px;
+  border-collapse: separate;
+
+
+}
+
+#AccountDetails td {
+  padding: 0;
+  margin: 0;
+}
+
+#Transaction {
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  width: 60%;
+  text-align: center;
+  border: 3px solid black;
+}
+
+/*
+#footer {
+  width: 94%;
+  padding: 3%;
+  background-color: #ED6444;
+}*/
+/* Sign out button */
+.signout-button {
+  background-color:#e4ebe4;
+  border: 2px solid #3e8e41;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: red;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  padding: 8px 43.9px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 40px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  /* position: fixed;
+  bottom: -20px;
+  right: 270px;
+   */
+}
+
+.signout-button:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+.signout-button::before {
+  content: "\f2f5"; /* Sign Out icon */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 5px;
+}
+
+
+/* container */
+container{
+
+}
+
+/* #name, #email info of user*/
+#name,#email{
+
+}
+
+/* for the products uploaded below ka user profile */
+#products , #transactions{
+     margin:0 auto;
+     margin-top: 10px; /* Optional: Add margin-top to create space between navbar and cards */
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 0.8rem;
+     width: 90%;
+     z-index: 1 ; /* Update the z-index value */
+     position: relative; /* Change the position to relative */
+     top:60px; 
+ }
+ 
+ .card {
+     height: max-content;
+     margin: 0;
+     padding: 0;
+     border: none;
+     box-shadow: none;
+     text-align: center;
+     border: 1px solid black;
+     transition: 200ms ease-in-out;
+     /* border-radius: 0.5rem 0.5rem 0 0; */
+     /* background-color: #dde6da; */
+     border:0.5px solid; /*changes*/
+     border-color:#b3b8b5;     /*changes*/
+     border-radius: none; /*changes*/
+     /* font-size: 15px; */
+ }  
+ 
+ .card:hover {
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+     cursor: pointer;
+     transform: scale(1.01);
+ }
+ 
+ .card-product-image {
+     width: 100%;
+     height: 15vw;
+     object-fit: cover;
+     border-radius: 0.5rem 0.5rem 0 0;
+     z-index:-1;
+ }
+ 
+ /* 8. products */
+ .products {
+     position: relative;
+     z-index: 0;
+ }
+
+ /* for edit delete buylo buttons */
+ .modify-button{
+  outline: 0;
+         border: 0;
+         background:#365544;
+         border: 1px solid #d9d9d9;
+         padding: 3px 0px;
+         margin-bottom: 30px;
+         color: whitesmoke;
+         width: 90px;
+         font-family: inherit;
+         margin-right: 5px;
+         transition: all 0.3s ease;
+         font-weight: 500;
+         
+        &:hover {
+           background: darken(white, 2%);
+           border: 1px solid #aedaa6;
+           color: #aedaa6;
+           cursor: pointer;}
+ }

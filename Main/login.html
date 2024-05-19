@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/login.css">
+    <script defer type="module">
+        import {Authenticator} from "./JS/authenticator.js";
+        import {Model} from "./JS/model.js";
+
+        const authenticator = new Authenticator();
+        const model = new Model();
+ 
+        document.getElementById("google-login").addEventListener("click", async () => {
+            await authenticator.signIn(model);
+            window.location.assign("homepage.html");
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="banner-container">
+            <img class="logo" src="http://localhost:3000/Images/baner.png.png">
+        </div>
+        <h4 id="question">Want to trade?</h4>
+        <b>
+            <h1 id="statement">Magbuy-lo ka na!</h1>
+        </b>
+
+    </nav>
+    <div class="form-container-login">
+        <div class="form-header-and-tagline">
+            <h1>Log in</h1>
+            <i>
+                <h5>where money is not the only known currency</h5>
+            </i>
+
+            <i></i>
+            <button id="google-login">Continue with Google</button>
+        </div>
+
+
+    </div>
+    </div>
+</body>
+<footer>
+    <p>Copyright 2023</p>
+</footer>
+</body>
+
+</html>

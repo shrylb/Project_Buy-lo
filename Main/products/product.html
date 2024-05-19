@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="/CSS/product.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script defer type='module' src="/JS/nav.js"></script>
+	<script defer type="module">
+		import {PageRenderer} from '/JS/pageRenderer.js';
+		import {Model} from '/JS/model.js';
+		import {Authenticator} from "/JS/authenticator.js";
+		import {db} from "/JS/connect.js";
+		import {updateDoc, arrayUnion, arrayRemove, doc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+		const authenticator = new Authenticator();
+		const model = new Model();
+		const renderer = new PageRenderer();
+ 
+		const authId = authenticator.getSignedInUserId();
+    	const account = await model.getAccountById(authId);
+	    
+
+
+		const urlParams = new URLSearchParams(window.location.search);
+		const id = urlParams.get('id');
+        const productJson = sessionStorage.getItem(`${id}`);
+		let product;
+
+		if(productJson){
+			product = JSON.parse(productJson);
+			
+		}else{
+			const model = new Model();
+			product = await model.getProductById(id);
+		}
+		renderer.renderPage(product);
+		
+		const wishButton = document.getElementById("addWishlist");
+		wishButton.addEventListener("click", async ()=>{
+			console.log("click");
+			const toBeUpdated = doc(db, "Accounts", authId);
+        
+			await updateDoc(toBeUpdated, {
+			wishlist: arrayUnion(id),
+			});
+
+		})
+
+		const buyloButton = document.querySelector("#goBuylo");
+		buyloButton.onclick = async ()=>{
+			console.log(product);
+			await model.addNotification(product.id, authId, product.userId);
+			
+		}
+
+	</script>
+
+
+</head>
+<body>
+    <nav class="navbar"></nav>
+
+
+    <container id="product">
+		<div id="product-img">
+		    <img class="product-big-img">
+		</div>
+		<div id="product-details">
+			<p id="product-name"></p>
+			<p id="product-info"></p>
+		</div>
+	</container><br><br>
+
+	<div id="to-buylo">
+		<button id="goBuylo" class="button">Buy-lo</button>
+		  <button id="addWishlist" class="button">Wishlist</button>
+		</div>
+	</div>
+	<div class="notification-container">
+
+	</div>
+	
+	<script type="module">
+	</script>
+
+	<footer></footer>
+</body>
+</html>

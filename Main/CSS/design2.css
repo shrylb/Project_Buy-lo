@@ -1,0 +1,147 @@
+@import url(nav.css);
+
+/* 0. Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Candara, sans-serif;
+
+  background: linear-gradient(to bottom, #4c7e70, #232423);
+  background-image: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29uJTIwdXNpbmclMjBjb21wdXRlcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60');
+  background-color: rgba(255,255,255,0.2);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+
+/*1. upload form container*/
+.upload-form-container{
+  margin: 0 auto;
+  border: 1px solid none;
+  width: 40%;
+  background-color:#65948749;
+  border-radius: 10px;
+
+}
+
+
+/*2. upload form*/
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* 3. section title */
+
+.section-title{
+  font-family: Candara, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+/* 4. labels in product upload form */
+#product-upload-label{      
+  padding: 1.5rem;
+}
+
+ /* 5 radio */
+ #merchandise,
+ #school-supplies,
+ #food,
+ #clothes,
+ #gadgets {
+   /* Add your styles here */
+   margin-bottom: 10px;
+ }
+ 
+ #merchandise:checked,
+ #school-supplies:checked,
+ #food:checked,
+ #clothes:checked,
+ #gadgets:checked {
+   /* Add styles for the checked state */
+   color: rgb(6, 66, 16);
+ }
+ 
+
+/* 6. fieldset or radio labels */
+#fieldset-label{    
+
+}
+
+/* 7. fieldset */
+fieldset{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+fieldset label:hover{
+  color:#a8e7cb;
+}
+
+/* 8. button */
+form button{
+background-color:#365544;
+border: 1px solid darkolivegreen;
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+box-sizing: border-box;
+color: #fff;
+cursor: pointer;
+font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+font-size: 16px;
+font-weight: 400;
+outline: none;
+/* outline: 0; */
+padding: 8px 25px;
+text-align: center;
+transform: translateY(0);
+transition: transform 150ms, box-shadow 150ms;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+margin-bottom: 5px;
+margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+button {
+  padding: 5px 30px;
+}
+}
+
+
+/* 9. label for input fonts */
+#product-label{
+  color:black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+} 
+/* 10. sign out button */
+
+
+
+/* 10. radio */
+input[type=radio]:checked ~ .check {
+  border: 5px solid #a8e7cb;
+}
+/*
+input[type=radio]:checked ~ .check::before{
+  background: black;
+}
+
+input[type=radio]:checked ~ label{
+  color: #a8e7cb;
+}
+*/
+
+/* 11. paragraph tag */
+p{
+  font-size: 15px;
+}
+
+

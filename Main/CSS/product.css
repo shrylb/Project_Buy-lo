@@ -1,0 +1,61 @@
+@import url(nav.css);
+
+#product{
+	text-align: center;
+	display: grid;
+	grid-template-columns:repeat(2, 1fr) ;
+	z-index: 1 ;
+    position: relative; 
+}
+
+#product-name{								/* for product name */
+	padding-bottom: 10px;
+	margin-top: 80px;
+	margin-bottom: 5px;
+	margin-right: 35px;
+	border-bottom: 1px solid #ED6444;
+	font-size: 20px;
+	font-weight: bold;
+}
+#product-info{								/*prodcut info*/
+	line-height: 30px;
+	padding: 20px;
+	font-size: 15px;
+	margin-right: 35px;
+	border: 2px solid #1E3932;
+	color: black;
+}
+
+.product-big-img{
+	margin-top: 30px;
+	width: 400px;
+	height: 300px;
+	object-fit: cover;
+}
+
+#to-buylo{				/* div nga naay buttons na buylo and wishlist8*/
+	text-align: center;
+	margin: 0px;
+}
+
+.button {
+         outline: 0;
+         border: 0;
+         background:#365544;
+         border: 1px solid #d9d9d9;
+         padding: 8px 0px;
+         margin-bottom: 30px;
+         color: whitesmoke;
+         text-transform: uppercase;
+         width: 125px;
+         font-family: inherit;
+         margin-right: 5px;
+         transition: all 0.3s ease;
+         font-weight: 500;
+         
+        &:hover {
+           background: darken(white, 2%);
+           border: 1px solid #aedaa6;
+           color: #aedaa6;
+           cursor: pointer;}
+		}
